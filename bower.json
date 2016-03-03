@@ -1,0 +1,21 @@
+{
+  "name": "angular2-dynamic-componentloader-example",
+  "authors": [
+    "Carlos Landeras <carlos.landeras@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+   
+  }
+}

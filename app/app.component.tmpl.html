@@ -1,0 +1,41 @@
+<header>
+    <div class="container">
+        <h3 class="jumbotron">Demo tutorial to create dynamic bootstrap dismissable alert elements with ng2-DynamicComponentLoader.</h3>    
+    </div>
+        
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h4><span class="label  label-default"> Dinamically create a custom bootstrap Alert</span></h4>
+        </div>
+        <div class="col-md-3">
+            <h4><span class="label label-info">Select Alert type:</span></h4>
+             <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-default" (click)="onChange(radioCritical.value)">
+                    <input type="radio" id="radiocritical" #radioCritical name="quality[25]"
+                      value="danger" />Danger
+                </label> 
+                <label class="btn btn-default" (click)="onChange(radioSuccess.value)">
+                    <input type="radio" id="radiosuccess" #radioSuccess name="quality[25]" value="success" /> Success
+                 </label>
+                 <label class="btn btn-default" (click)="onChange(radioWarning.value)">
+                    <input type="radio" id="radiowarning" #radioWarning name="quality[25]" value="warning" /> Warning
+                 </label>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <span class="alert-{{alertType}}">Selected: <b>{{alertType}}</b></span>
+        </div>
+     </div>
+    <input type="text" #alertValue value="" placeholder="Inser alert text"/>
+    <input type="button" class="btn btn-success" value="Add Alert!" (click)="AddAlert(alertValue.value)"/>
+    <h4><span class="label label-info "> Click on alert to dismiss it!</span></h4>
+    <div class="row">
+        <div class="col-md-12">
+            <div #alertAppend></div>
+        </div>
+        
+    </div>
+ </div>
+
