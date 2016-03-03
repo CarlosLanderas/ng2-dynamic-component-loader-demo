@@ -16,7 +16,15 @@ export class AppComponent{
     private alertType: string;
    
     constructor(private dynamicComponentLoader: DynamicComponentLoader,private element : ElementRef) {}
-       
+    
+    AddAlert(msg:string) {                
+      //Example configuration
+      let alertConfig  = this.GetDummyAlertConfig(this.alertType,msg);      
+      let alertBindings = this.GetAlertBindings(alertConfig);
+      this.CreateDynamicAlert(alertBindings);
+     
+    }
+           
     private GetDummyAlertConfig(style: string, msg:string) : AlertConfig {
         return new AlertConfig(style,msg, '../img/updating.png');
     }
@@ -33,16 +41,7 @@ export class AppComponent{
                comp.instance.contentRef(comp);
                console.log("Alert rendered with message: " + comp.instance.MessageContent);              
            }); 
-    }
-    
-    AddAlert(msg:string) {
-        
-      //Example configuration
-      let alertConfig  = this.GetDummyAlertConfig(this.alertType,msg);      
-      let alertBindings = this.GetAlertBindings(alertConfig);
-      this.CreateDynamicAlert(alertBindings);
-     
-    }
+    }  
     
     onChange(alertType: string) {
        this.alertType=alertType;
